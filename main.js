@@ -60,6 +60,7 @@ const containerElement = document.getElementById("container");
 
 for (let i = 0; i < posts.length; i++) {
     const post = posts[i];
+    let likes = post.likes;
 
     const domPost = `<div class="post">
                         <div class="post__header">
@@ -86,7 +87,7 @@ for (let i = 0; i < posts.length; i++) {
                                     </a>
                                 </div>
                                 <div class="likes__counter">
-                                    Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+                                    Piace a <b id="like-counter-1" class="js-likes-counter">${likes}</b> persone
                                 </div>
                             </div> 
                         </div>            
@@ -95,4 +96,27 @@ for (let i = 0; i < posts.length; i++) {
     containerElement.innerHTML += domPost;
 }
 
-//TODO: Like button
+const likeButton = document.querySelectorAll(".like-button")
+console.log(likeButton);
+
+const counter = document.querySelectorAll(".js-likes-counter")
+console.log(counter);
+
+likeButton.forEach((button, i) => {
+    button.addEventListener("click", function() {
+        let likeCounter = counter[i];
+        let counterValue = parseInt(likeCounter.innerHTML);
+        
+        if (button.classList.contains("like-button--liked")) {
+            button.classList.remove("like-button--liked");
+            counterValue--;
+            likeCounter.innerHTML = counterValue;
+        }
+        else {
+            button.classList.add("like-button--liked");
+            counterValue++;
+            likeCounter.innerHTML = counterValue;
+        }
+    }
+)
+});
