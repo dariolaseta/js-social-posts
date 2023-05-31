@@ -60,7 +60,7 @@ const containerElement = document.getElementById("container");
 
 for (let i = 0; i < posts.length; i++) {
     const post = posts[i];
-    //TODO: data
+
     const domPost = `<div class="post">
                         <div class="post__header">
                             <div class="post-meta">                    
@@ -69,7 +69,7 @@ for (let i = 0; i < posts.length; i++) {
                                 </div>
                                 <div class="post-meta__data">
                                     <div class="post-meta__author">${post.author.name}</div>
-                                    <div class="post-meta__time">4 mesi fa</div>
+                                    <div class="post-meta__time">${post.created}</div>
                                 </div>                    
                             </div>
                         </div>
