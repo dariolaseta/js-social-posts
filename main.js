@@ -60,7 +60,7 @@ const containerElement = document.getElementById("container");
 
 for (let i = 0; i < posts.length; i++) {
     const post = posts[i];
-    
+    //TODO: data
     const domPost = `<div class="post">
                         <div class="post__header">
                             <div class="post-meta">                    
@@ -75,7 +75,7 @@ for (let i = 0; i < posts.length; i++) {
                         </div>
                         <div class="post__text">${post.content}</div>
                         <div class="post__image">
-                            <img src="https://unsplash.it/600/300?image=171" alt="">
+                            <img src="${post.media}" alt="">
                         </div>
                         <div class="post__footer">
                             <div class="likes js-likes">
