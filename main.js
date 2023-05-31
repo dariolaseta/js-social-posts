@@ -94,3 +94,5 @@ for (let i = 0; i < posts.length; i++) {
 
     containerElement.innerHTML += domPost;
 }
+
+//TODO: Like button
